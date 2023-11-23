@@ -34,6 +34,25 @@ router.get('/details', async (req, res, next) => {
     
 });
 
+
+
+
+// GET Login Page
+router.get('/login', (req, res) => {
+    res.render('login.ejs', { title: 'Login' });
+  });
+  
+  // POST Login Data
+  router.post('/login', async (req, res) => {
+   
+    
+  });
+  
+  // GET Registration Page
+  router.get('/register', (req, res) => {
+    res.render('register.ejs', { title: 'Register' });
+  });
+
 //ADD POST
 router.post('/details', async (req, res, next) => {
     try 
