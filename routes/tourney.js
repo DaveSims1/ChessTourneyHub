@@ -95,7 +95,7 @@ router.post('/details', async (req, res, next) => {
             "location": req.body.location,
             "date": req.body.date
         });
-        res.redirect('/tourney/tournaments');
+        res.redirect('/tourney/tournament-edit');
     }
     catch(err)
     {
@@ -138,7 +138,7 @@ router.post('/details/:id', async (req, res, next) => {
                 "location": req.body.location,
                 "date": req.body.date
         });
-        res.redirect('/tourney/tournaments');
+        res.redirect('/tourney/tournament-edit');
         
     
 } catch (error) {
@@ -158,7 +158,7 @@ router.get('/delete/:id', async (req, res, next) => {
     try 
     {
         await Tourney.findByIdAndDelete(id)
-        res.redirect('/tourney/tournaments');
+        res.redirect('/tourney/tournament-edit');
     }
     catch(err)
     {
