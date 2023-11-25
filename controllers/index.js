@@ -42,7 +42,6 @@ module.exports.processLoginPage = function(req, res, next) {
         //   });
         // };//(req, res, next);
     }
-
 //Register
 module.exports.displayRegisterPage = (req, res, next) => {
     if(!req.user){
@@ -100,6 +99,10 @@ module.exports.processRegisterPage = (req, res, next) => {
 
 //Logout
 module.exports.performLogout = (req, res, next) => {
-    req.logout();
-    res.redirect('/');
-}
+    req.logout((err) => {
+        if (err) {
+            return next(err);
+        }
+        res.redirect('/home');
+    });
+};
