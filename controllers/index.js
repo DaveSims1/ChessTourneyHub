@@ -24,23 +24,26 @@ module.exports.displayLoginPage = (req, res, next) =>{
 module.exports.processLoginPage = function(req, res, next) {
     console.log("process");
     console.log(req.body);
-    
-        passport.authenticate('local')(req, res, () => {
-            res.redirect('/tourney/tournament-edit');
-        });
-        // passport.authenticate('local'),(err, user, info) => {
-        //     console.log("1");
-        //   if (err) { return next(err); }
-        //   if (!user) {
-        //     console.log("1");
-        //     return res.redirect('/login');
-        //   }
-        //   req.logIn(user, function(err) {
-        //     if (err) { return next(err); }
-        //     console.log("3");
-        //     return res.redirect('/tourney/tournaments');
-        //   });
-        // };//(req, res, next);
+
+    passport.authenticate('local', 
+    (err,user,info) => {
+        if(err){
+            return next(err);
+        }
+        if(!user){
+            req.flash('loginMessage', 'Authentication Error');
+            console.log("not a user!");
+            return res.redirect('/login');
+        }
+        req.login(user, (err) =>{
+            //server issue
+            if(err){
+                return next(err);
+            }
+            return res.redirect('/tourney/tournament-edit');
+        })
+    })(req, res, next);
+
     }
 //Register
 module.exports.displayRegisterPage = (req, res, next) => {
@@ -62,6 +65,7 @@ module.exports.processRegisterPage = (req, res, next) => {
     //instance of register page
     console.log(req.body);
     console.log("register");
+
     let newUser = new User({
         username: req.body.username,
         email: req.body.email,
@@ -88,9 +92,10 @@ module.exports.processRegisterPage = (req, res, next) => {
         }
         else{
             //no error so redirect for authentication
-            
+
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/tourney/tournaments');
+                console.log("hello!");
+                res.redirect('/tourney/tournament-edit');
             });
         }
     })
