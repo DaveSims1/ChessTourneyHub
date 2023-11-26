@@ -7,6 +7,14 @@ let mongoose = require('mongoose');
 //Connecting to the database model tourney
 let Tourney = require('../models/tourney');
 
+//Authentication Function
+function requireAuth(req, res, next){
+    if(!req.isAuthenticated()){
+        return res.redirect('/login');
+    }
+    next();
+}
+
 
 router.get('/tournaments', async (req, res) => {
     console.log('tourney.js');
@@ -20,7 +28,7 @@ router.get('/tournaments', async (req, res) => {
     }
   });
 
-  router.get('/tournament-edit', async (req, res) => {
+  router.get('/tournament-edit', requireAuth, async (req, res) => {
     console.log('tourney.js');
     try {
         const items = await Tourney.find();
@@ -31,35 +39,6 @@ router.get('/tournaments', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-
-
-
-  //Authentication routes
-
-// // GET Login Page
-// router.get('/login', (req, res) => {
-//     res.render('login.ejs', { title: 'Login' });
-//   });
-  
-//   // POST Login Data
-//   router.post('/login', async (req, res) => {
-   
-    
-//   });
-  
-//   // GET Registration Page
-//   router.get('/register', (req, res) => {
-//     res.render('register.ejs', { title: 'Register' });
-//   });
-
-//   //Perform logout
-//   router.get('/logout', (req, res) =>{
-    
-//   });
-
-
-
-
 
 
 //CRUD
@@ -84,7 +63,7 @@ router.get('/details', async (req, res, next) => {
 
 
 //ADD POST
-router.post('/details', async (req, res, next) => {
+router.post('/details', requireAuth, async (req, res, next) => {
     try 
     {
         await Tourney.create(
@@ -104,7 +83,7 @@ router.post('/details', async (req, res, next) => {
 });
 
 //EDIT GET
-router.get('/details/:id', async (req, res, next) => {
+router.get('/details/:id', requireAuth, async (req, res, next) => {
     let id = req.params.id;
     console.log('tourney.js');
     try { 
@@ -127,7 +106,7 @@ router.get('/details/:id', async (req, res, next) => {
 });
 
 //EDIT POST
-router.post('/details/:id', async (req, res, next) => {
+router.post('/details/:id', requireAuth, async (req, res, next) => {
     let id = req.params.id;
     try { 
         const items = await Tourney.findByIdAndUpdate(
@@ -150,7 +129,7 @@ router.post('/details/:id', async (req, res, next) => {
 
 
 //DELETE
-router.get('/delete/:id', async (req, res, next) => {
+router.get('/delete/:id', requireAuth, async (req, res, next) => {
     let id = req.params.id;
     //const items = await Contact.find();
     console.log(await Tourney.findById(id));
