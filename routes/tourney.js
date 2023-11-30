@@ -45,7 +45,7 @@ router.get('/tournaments', async (req, res) => {
 
 
 //  ADD - GET the Tournament Details page in order to add a new Tournament
-router.get('/details', async (req, res, next) => {
+router.get('/details', requireAuth, async (req, res, next) => {
     console.log('tourney.js');
     try {
         const items = await Tourney.find();
