@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./server.js",
-    "build": "ng build --prod",
-    "clean": "rm -rf dist",
-    "copy": "xcopy src dist /E /I /Y /Q"
+    "build": "xcopy -r src dist"
   },
   "engines": {
     "node": "^18.17.1",
