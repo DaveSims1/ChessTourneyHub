@@ -57,7 +57,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/Scripts/app.js"
+              "src/Scripts/app.ts"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -127,5 +127,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
