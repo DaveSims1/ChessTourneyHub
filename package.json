@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./server.js",
-    "build": "cp -r src dist"
+    "build": "npm run clean && npm run copy",
+    "clean": "rm -rf dist",
+    "copy": "xcopy src dist /E /I /Y /Q"
   },
   "engines": {
     "node": "^18.17.1",
