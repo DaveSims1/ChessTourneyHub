@@ -1,3 +1,9 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<h1 id="message"></h1>
+<h2 id="errorStatus"></h2>
+<pre id="errorStack"></pre>
+
+<script>
+  document.getElementById("message").innerText = "<%= message %>";
+  document.getElementById("errorStatus").innerText = "<%= error.status %>";
+  document.getElementById("errorStack").innerText = "<%= error.stack %>";
+</script>
