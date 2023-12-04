@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './bottom-nav.component.html',
-  styleUrl: './bottom-nav.component.css'
+  styleUrls: ['./bottom-nav.component.css']
 })
 export class BottomNavComponent {
 
