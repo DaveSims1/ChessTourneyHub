@@ -1,12 +1,13 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { AppRoutingModule }  from './app.routes';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { BottomNavComponent } from './partials/bottom-nav/bottom-nav.component';
 import { MainNavComponent } from './partials/main-nav/main-nav.component';
+import { Router } from 'express';
 
 @NgModule({
     declarations: [
@@ -18,9 +19,11 @@ import { MainNavComponent } from './partials/main-nav/main-nav.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {}
