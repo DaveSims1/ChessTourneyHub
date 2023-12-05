@@ -1,1 +1,69 @@
-<p>tourneyedit works!</p>
+<main class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+  
+            <h1 class="text-center my-4"><i class="fa-solid fa-chess"></i> TITLE <i class="fa-solid fa-chess"></i></h1>
+            <div class="text-center mb-3">
+                <a href="details" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add a Tournament
+                </a>
+            </div>
+  
+            <!-- Tournament Table -->
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header -->
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Type</th>
+                        <th class="text-center">Location</th>
+                        <th class="text-center">Date</th>
+                        <th class="text-center col-1">Edit</th>
+                        <th class="text-center col-1">Delete</th>
+                    </tr>
+                </thead>
+  
+                <!-- Table Body -->
+                <tbody>
+                    <!-- Dummy data for representation -->
+                    <tr>
+                        <td class="text-center">Item 1</td> 
+                        <td class="text-center">Type 1</td> 
+                        <td class="text-center">Location 1</td>
+                        <td class="text-center">Date 1</td> 
+                        <td class="text-center">
+                            <a href="details/1" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="delete/1" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- Dummy data for representation -->
+                    <tr>
+                        <td class="text-center">Item 2</td> 
+                        <td class="text-center">Type 2</td> 
+                        <td class="text-center">Location 2</td>
+                        <td class="text-center">Date 2</td> 
+                        <td class="text-center">
+                            <a href="details/2" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="delete/2" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- Repeat the above structure for each item in the loop -->
+                </tbody>
+            </table>
+            <br>
+        </div>
+    </div>
+  </main>
+  
