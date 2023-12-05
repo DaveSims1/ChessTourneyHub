@@ -9,3 +9,81 @@
     width: 48%; 
     border-radius: 8px; 
   }
+
+  /* General Styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  /* Jumbotron Styles */
+  
+  .jumbotron {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .jumbotron h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+  }
+  
+  .jumbotron p {
+    font-size: 1.2rem;
+    color: #343a40;
+  }
+  
+  .jumbotron hr {
+    border-color: #007bff;
+  }
+  
+  .jumbotron a.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Image Grid Styles */
+  
+  .image-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .image-grid img {
+    width: 48%;
+    border-radius: 8px;
+  }
+  
+  /* Additional Content Styles */
+  
+  .additional-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .additional-content .col-md-6 {
+    width: 48%;
+  }
+  
+  .additional-content h2 {
+    color: #007bff;
+  }
+  
+  .additional-content p {
+    color: #343a40;
+  }
+  
+  .additional-content hr {
+    border-color: #007bff;
+  }
+  

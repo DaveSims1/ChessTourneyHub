@@ -1,0 +1,23 @@
+footer {
+    margin-top: 20px; 
+  }
+  
+  .navbar {
+    height: 60px; 
+  }
+  
+  .navbar-dark {
+    background-color: #343a40; 
+  }
+  
+  .navbar-text {
+    color: #fff; 
+    font-size: 14px; 
+    margin: 0; 
+    padding: 15px; 
+  }
+  
+  .display-7 {
+    font-size: 18px; 
+  }
+  

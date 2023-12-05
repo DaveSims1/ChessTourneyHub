@@ -1,0 +1,30 @@
+/* Nav Styles */
+
+.navbar {
+    background-color: #343a40; /* Set the background color of the navbar */
+  }
+  
+  .navbar-brand {
+    color: #fff; /* Set the color of the navbar brand text */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff; 
+  }
+  
+  .navbar-nav {
+    margin-left: auto; 
+  }
+  
+  .nav-item {
+    margin-right: 15px; 
+  }
+  
+  .nav-link {
+    color: #fff; 
+  }
+  
+  .nav-link:hover {
+    color: #007bff; 
+  }
+  
