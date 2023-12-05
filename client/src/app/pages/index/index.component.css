@@ -1,0 +1,11 @@
+.image-grid {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 20px; 
+  }
+  
+  .image-grid img {
+    width: 48%; 
+    border-radius: 8px; 
+  }
