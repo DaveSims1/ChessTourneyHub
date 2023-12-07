@@ -4,7 +4,7 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
-
+import mongoose from 'mongoose';
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
@@ -24,6 +24,14 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
+  //Database connection
+  mongoose.connect("mongodb+srv://David:21CLvDwr97yFkae5@atlascluster.sb92ikf.mongodb.net/chesstourneyhub?retryWrites=true&w=majority");
+
+  let mongoDB = mongoose.connection;
+    mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+    mongoDB.once('open', () => {
+      console.log('Connected to MongoDB Atlas.... CLIENT SIDE');
+    });
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
