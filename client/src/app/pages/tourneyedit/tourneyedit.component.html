@@ -26,40 +26,22 @@
                 <!-- Table Body -->
                 <tbody>
                     <!-- Dummy data for representation -->
-                    <tr>
-                        <td class="text-center">Item 1</td> 
-                        <td class="text-center">Type 1</td> 
-                        <td class="text-center">Location 1</td>
-                        <td class="text-center">Date 1</td> 
-                        <td class="text-center">
-                            <a href="details/1" class="btn btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="delete/1" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <!-- Dummy data for representation -->
-                    <tr>
-                        <td class="text-center">Item 2</td> 
-                        <td class="text-center">Type 2</td> 
-                        <td class="text-center">Location 2</td>
-                        <td class="text-center">Date 2</td> 
-                        <td class="text-center">
-                            <a href="details/2" class="btn btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="delete/2" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <!-- Repeat the above structure for each item in the loop -->
+                        <tr *ngFor = "let tournaments of tourneyEdit">
+                            <td><span>{{tournaments.title}}</span></td> 
+                            <td><span>{{tournaments.type}}</span></td> 
+                            <td><span>{{tournaments.location}}</span></td>
+                            <td><span>{{tournaments.date}}</span></td> 
+                            <td>
+                                <a href="details/1" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="delete/1" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
                 </tbody>
             </table>
             <br>

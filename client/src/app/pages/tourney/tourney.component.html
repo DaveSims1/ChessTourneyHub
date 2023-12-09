@@ -19,11 +19,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="text-center">Item Title</td> 
-                        <td class="text-center">Item Type</td> 
-                        <td class="text-center">Item Location</td>
-                        <td class="text-center">Item Date</td> 
+                    <tr *ngFor = "let tournaments of tourneys">
+                        <td><span>{{tournaments.title}}</span></td> 
+                        <td><span>{{tournaments.type}}</span></td> 
+                        <td><span>{{tournaments.location}}</span></td>
+                        <td><span>{{tournaments.date}}</span></td> 
                     </tr>
                 </tbody>
             </table>
